@@ -7,6 +7,12 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 export const metadata: Metadata = {
   title: "HOSUR INFRATECH",
   description: "Exceeding Expectations in Infrastructure Solutions",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", media: "(prefers-color-scheme: light)" },
+      { url: "/favicon.ico", media: "(prefers-color-scheme: dark)" },
+    ],
+  },
 };
 
 export default function RootLayout({
