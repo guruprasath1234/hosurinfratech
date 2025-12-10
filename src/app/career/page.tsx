@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 async function getJobs() {
   try {
-    const res = await fetch("http://localhost:3000/api/careers", {
+    const res = await fetch("http://localhost:3000/app/career", {
       cache: "no-store"
     });
 
