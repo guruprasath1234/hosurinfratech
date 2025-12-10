@@ -8,14 +8,20 @@ export const metadata: Metadata = {
 };
 
 async function getJobs() {
-  const res = await fetch("http://localhost:3000/api/careers", {
-    cache: "no-store"
-  });
+  try {
+    const res = await fetch("http://localhost:3000/api/careers", {
+      cache: "no-store"
+    });
 
-  if (!res.ok) return [];
+    if (!res.ok) return [];
 
-  const data = await res.json();
-  return data.jobs || [];
+    const data = await res.json();
+    return data.jobs || [];
+  } catch (error) {
+    // Log error for debugging
+    console.error("Failed to fetch jobs:", error);
+    return [];
+  }
 }
 
 export default async function CareerPage() {
@@ -30,18 +36,22 @@ export default async function CareerPage() {
           </h1>
         </AnimationWrapper>
 
-        {jobs.map((job: any) => (
-          <div
-            key={job._id}
-            className="rounded-2xl border border-slate-200 p-4 bg-white"
-          >
-            <h2 className="font-semibold">{job.title}</h2>
-            <p className="text-xs text-slate-600">
-              {job.location} • {job.type}
-            </p>
-            <p className="text-xs mt-2">{job.description}</p>
-          </div>
-        ))}
+        {jobs.length === 0 ? (
+          <div className="text-red-500">No job openings available at the moment.</div>
+        ) : (
+          jobs.map((job: any) => (
+            <div
+              key={job._id}
+              className="rounded-2xl border border-slate-200 p-4 bg-white"
+            >
+              <h2 className="font-semibold">{job.title}</h2>
+              <p className="text-xs text-slate-600">
+                {job.location} • {job.type}
+              </p>
+              <p className="text-xs mt-2">{job.description}</p>
+            </div>
+          ))
+        )}
 
         <AnimationWrapper>
           <form
