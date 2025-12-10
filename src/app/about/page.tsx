@@ -28,7 +28,7 @@ export default function AboutPage() {
         <div className="border rounded-2xl p-6 text-center">
           <div className="overflow-hidden rounded-full w-40 h-40 mx-auto">
             <img
-              src="/ceo1.jpeg"
+              src="/ceo2.jpeg"
               alt="Annamalai"
               className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
             />
@@ -49,7 +49,7 @@ export default function AboutPage() {
         <div className="border rounded-2xl p-6 text-center">
           <div className="overflow-hidden rounded-full w-40 h-40 mx-auto">
             <img
-              src="/ceo2.jpeg"
+              src="/ceo1.jpeg"
               alt="Senthil Vel"
               className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
             />

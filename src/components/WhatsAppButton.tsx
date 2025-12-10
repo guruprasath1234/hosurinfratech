@@ -24,12 +24,12 @@ export default function WhatsAppButton() {
 
           {/* ✅ Annamalai */}
           <a
-            href={`https://api.whatsapp.com/send?phone=919901018556?text=${message}`}
+            href={`https://api.whatsapp.com/send?phone=919901018556&text=Hello%20there!`}
             target="_blank"
             className="flex items-center gap-3 px-4 py-3 hover:bg-green-50 transition"
           >
             <img
-              src="/ceo1.jpeg"
+              src="/ceo2.jpeg"
               alt="Annamalai"
               className="w-10 h-10 rounded-full object-cover border"
             />
@@ -41,12 +41,12 @@ export default function WhatsAppButton() {
 
           {/* ✅ Senthil Vel */}
           <a
-            href={`https://api.whatsapp.com/send?phone=919945600097?text=${message}`}
+            href={`https://api.whatsapp.com/send?phone=919945600097&text=Hello%20there!`}
             target="_blank"
             className="flex items-center gap-3 px-4 py-3 hover:bg-green-50 transition"
           >
             <img
-              src="/ceo2.jpeg"
+              src="/ceo1.jpeg"
               alt="Senthil Vel"
               className="w-10 h-10 rounded-full object-cover border"
             />
