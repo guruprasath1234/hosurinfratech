@@ -4,16 +4,11 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
-export const metadata: Metadata = {
-  title: "HOSUR INFRATECH",
-  description: "Exceeding Expectations in Infrastructure Solutions",
-  icons: {
-    icon: [
-      { url: "/favicon.ico", media: "(prefers-color-scheme: light)" },
-      { url: "/favicon.ico", media: "(prefers-color-scheme: dark)" },
-    ],
-  },
-};
+// ✅ Import metadata from home-metadata
+import { metadata as homeMetadata } from "./home-metadata";
+
+// ✅ Use the imported metadata
+export const metadata: Metadata = homeMetadata;
 
 export default function RootLayout({
   children,

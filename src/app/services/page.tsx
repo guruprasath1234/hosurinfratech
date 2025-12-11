@@ -64,7 +64,7 @@ export default function ServicesPage() {
         {/* ✅ 4. INSTALLATION */}
         <div className="flex gap-4 border rounded-2xl p-5 items-center">
           <img
-            src="/services/installation.jpg"
+            src="/services/interior.jpg"
             className="w-20 h-20 rounded-lg object-cover"
             alt="Installation"
           />

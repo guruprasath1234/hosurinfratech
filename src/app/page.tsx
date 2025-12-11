@@ -1,3 +1,5 @@
+"use client";
+import { useEffect, useState } from "react";
 import type { Metadata } from "next";
 import { Hero } from "@/components/Hero";
 import { AnimationWrapper } from "@/components/AnimationWrapper";
@@ -6,14 +8,22 @@ import { defaultServices } from "@/data/services";
 import { Testimonials } from "@/components/Testimonials";
 import Link from "next/link";
 import { Button } from "@/components/Button";
+import { Loader } from "@/components/Loader";
 
-export const metadata: Metadata = {
-  title: "HOSUR INFRATECH | Home",
-  description:
-    "Turnkey partner for HVAC, lab infrastructure, interior fit-outs, and installation services."
-};
 
 export default function HomePage() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1500); // loading duration
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) return <Loader />;
+
   return (
     <>
       <Hero />

@@ -28,7 +28,7 @@ export default function WhatsAppButton() {
             target="_blank"
             className="flex items-center gap-3 px-4 py-3 hover:bg-green-50 transition"
           >
-            <img
+            <img 
               src="/ceo2.jpeg"
               alt="Annamalai"
               className="w-10 h-10 rounded-full object-cover border"
