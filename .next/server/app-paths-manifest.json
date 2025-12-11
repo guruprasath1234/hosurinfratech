@@ -1,8 +1,0 @@
-{
-  "/page": "app/page.js",
-  "/projects/hvac/page": "app/projects/hvac/page.js",
-  "/csr/page": "app/csr/page.js",
-  "/projects/lab/page": "app/projects/lab/page.js",
-  "/csr/education/page": "app/csr/education/page.js",
-  "/contact/page": "app/contact/page.js"
-}
