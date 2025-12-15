@@ -14,7 +14,6 @@ const navLinks = [
   { name: "Contact", href: "/contact" }
 ];
 
-
 export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
@@ -87,3 +86,4 @@ export default function Navbar() {
     </header>
   );
 }
+
