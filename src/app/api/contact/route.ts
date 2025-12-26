@@ -1,46 +1,38 @@
 import { NextResponse } from "next/server";
-import nodemailer from "nodemailer";
+import { connectDB } from "@/lib/mongodb";
+import ContactForm from "@/models/ContactForm";
 
 export async function POST(req: Request) {
   try {
     const body = await req.json();
     const { name, email, phone, message } = body;
 
-    // ✅ ONE FIXED SENDER (ANY GMAIL YOU OWN)
-    const SENDER_EMAIL = "balakrishnanmh22@gmail.com";
-    const SENDER_PASS = "szokmosupxlqrtzt"; // app password
+    if (!name || !email || !phone || !message) {
+      return NextResponse.json(
+        { error: "All fields are required" },
+        { status: 400 }
+      );
+    }
 
-    // ✅ ALWAYS FIXED RECEIVER
-    const RECEIVER_EMAIL = "hosurinfratech24@gmail.com";
+    await connectDB();
 
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: SENDER_EMAIL,
-        pass: SENDER_PASS,
-      },
+    await ContactForm.create({
+      name,
+      email,
+      phone,
+      message,
     });
 
-    await transporter.sendMail({
-      from: `"Website Enquiry" <${SENDER_EMAIL}>`,
-      to: RECEIVER_EMAIL,          // ✅ COMPANY MAIL
-      replyTo: email,             // ✅ CUSTOMER MAIL
-      subject: "New Contact Enquiry - HOSUR INFRATECH",
-      html: `
-        <h2>New Website Enquiry</h2>
-        <p><b>Name:</b> ${name}</p>
-        <p><b>Email:</b> ${email}</p>
-        <p><b>Phone:</b> ${phone}</p>
-        <p><b>Message:</b> ${message}</p>
-      `,
-    });
-
-    return NextResponse.json({ success: true });
-  } catch (error) {
-    console.error("Mail error:", error);
     return NextResponse.json(
-      { success: false, error: "Email failed" },
+      { success: true, message: "Message saved successfully" },
+      { status: 201 }
+    );
+  } catch (error) {
+    console.error("Contact form error:", error);
+    return NextResponse.json(
+      { error: "Something went wrong" },
       { status: 500 }
     );
   }
 }
+

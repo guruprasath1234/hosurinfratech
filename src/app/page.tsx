@@ -37,7 +37,7 @@ export default function HomePage() {
                   Services
                 </p>
                 <h2 className="text-xl sm:text-2xl font-semibold text-slate-900">
-                  Infrastructure engineered for performance
+                  Infratech engineered for performance
                 </h2>
               </div>
               <Link href="/services" className="hidden sm:inline-flex">
@@ -72,7 +72,7 @@ export default function HomePage() {
               </h2>
               <p className="text-sm text-slate-700 mb-3">
                 HOSUR INFRATECH brings together experience in HVAC, lab
-                infrastructure, and interiors to deliver reliable, compliant,
+                infrastructure, and Clean room to deliver reliable, compliant,
                 and future-ready facilities for clients across manufacturing,
                 education, and research.
               </p>
@@ -140,7 +140,7 @@ export default function HomePage() {
           </AnimationWrapper>
           <p className="text-sm text-slate-700 max-w-2xl">
             A quick snapshot of turnkey projects executed across laboratories,
-            industrial facilities, and commercial interiors.
+            industrial facilities, and cleanroom solution.
           </p>
           {/* In a real app we could fetch featured projects here */}
           <div className="rounded-3xl border border-dashed border-slate-300 p-6 text-sm text-slate-500">

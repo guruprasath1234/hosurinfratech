@@ -51,7 +51,7 @@ export default function ServicesPage() {
             alt="Interior"
           />
           <div>
-            <h3 className="font-semibold">Residential & Commercial Interior Work</h3>
+            <h3 className="font-semibold">Clean Room Solution</h3>
             <p className="text-sm text-slate-600">
               Interior fit-outs for homes and offices.
             </p>

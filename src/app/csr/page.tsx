@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function CSRPage() {
   return (
     <div className="section-padding max-w-6xl mx-auto">
-      <h1 className="text-3xl font-bold mb-8">Our CSR Activities</h1>
+      <h1 className="text-3xl font-bold mb-8">Corporate Social Responsibility (CSR)Activities</h1>
 
       <div className="grid md:grid-cols-2 gap-6">
 

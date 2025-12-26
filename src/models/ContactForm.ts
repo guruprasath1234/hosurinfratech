@@ -6,17 +6,37 @@ export interface IContactForm extends Document {
   phone: string;
   message: string;
   createdAt: Date;
+  updatedAt: Date;
 }
 
 const ContactFormSchema = new Schema<IContactForm>(
   {
-    name: { type: String, required: true },
-    email: { type: String, required: true },
-    phone: { type: String, required: true },
-    message: { type: String, required: true }
+    name: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    email: {
+      type: String,
+      required: true,
+      lowercase: true,
+      trim: true,
+    },
+    phone: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    message: {
+      type: String,
+      required: true,
+      trim: true,
+    },
   },
-  { timestamps: true }
+  {
+    timestamps: true, // ✅ createdAt & updatedAt auto
+  }
 );
 
-export const ContactForm =
-  models.ContactForm || model<IContactForm>("ContactForm", ContactFormSchema);
+export default models.ContactForm ||
+  model<IContactForm>("ContactForm", ContactFormSchema);
